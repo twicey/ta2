@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/lavish-bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <title></title>
+    <script src="phonegab.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function() {
+        $('#fotos').click(function() {
+            navigator.camera.getPicture(oSuccess,oFail,{
+                quality: 10,
+                destinationType: Camera.DestinationType.FILE_URI,
+                targetWidth: 400,
+                targetHeight: 400
+            });
+        })
+
+        function oSuccess(PicUri) {
+            $('#img1').attr('src',PicUri);
+            $('#img1text').html(PicUri);
+            $('#picfield').fadeIn();
+        }
+
+        function oFail(msg) {
+            alert('Es gab ein Fehler ' + msg);
+        }
+    });
+</script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm text-center">
+                <h1>A new One <i class="fa fa-bug fa-spin"></i></h1>
+                <p>thats a test for features of my ne phonegap app.</p>
+            </div>
+            <div class="well well-sm text-center">
+                <button class="btn btn-primary">START</button>
+                <button class="btn btn-primary" id="fotos">Foto</button>
+                <button class="btn btn-primary">OTHER</button>
+            </div>
+            <div class="well well-sm" id="picfield" style="display: none">
+                <img src="" alt="" class="img-thumbnail" style="width: 400px;height: 400px;" id="img1"/>
+                <div id="img1text"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
