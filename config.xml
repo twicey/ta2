@@ -12,6 +12,8 @@
     <description>
         An example for phonegap build docs.
     </description>
+    
+    <gap:plugin name="com.logilite.vision.camera" version="0.2.11" />
 
     <author href="https://smsvc.de" email="shini@smedia-service.de">
         Shini J. Karlson
