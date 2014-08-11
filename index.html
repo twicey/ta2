@@ -12,6 +12,8 @@
         // Wait for device API libraries to load
         //
         document.addEventListener("deviceready",onDeviceReady,false);
+        
+        console.log('hallo you!');
 
         // device APIs are available
         //
@@ -94,6 +96,7 @@
     </script>
 </head>
 <body>
+<div style="font-size: 200%">Some Funny low Text!</div>
 <button onclick="capturePhoto();">Capture Photo</button> <br>
 <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
 <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
